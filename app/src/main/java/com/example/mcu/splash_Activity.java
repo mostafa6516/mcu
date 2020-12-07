@@ -1,23 +1,31 @@
 package com.example.mcu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Pair;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class splash_Activity extends AppCompatActivity {
+
+    int SPLASH_SCREEN = 4000;
 
 
     //variables
     Animation up_animation,text_animation;
     ImageView splash_logo;
     TextView welcome,to,mcu;
+
+    public splash_Activity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +49,32 @@ public class splash_Activity extends AppCompatActivity {
         to.setAnimation(text_animation);
         mcu.setAnimation(text_animation);
 
-        int SPLASH_SCREEN = 5;
-        new Handler().postDelayed(() -> {
-            Intent intent= new Intent(splash_Activity.this,login_Activity.class );
-            startActivity(intent);
-            finish();
-        }, SPLASH_SCREEN);
+
+        new Handler().postDelayed(this::run, SPLASH_SCREEN);
     }
+
+    private void run() {
+        Intent intent = new Intent(splash_Activity.this, login_Activity.class);
+
+
+        //animation for login screen
+
+      // pair[] Pairs = (pair[]) new Pair[2];
+       //Pairs[0] = (pair) new Pair<View,String>(splash_logo,"logo_image");
+       //Pairs[1] = (pair) new Pair<View,String>(welcome,"logo_text");
+
+         Pair[] Pairs = new Pair[2];
+         Pairs[0] = new Pair<View,String>(splash_logo,"logo_image");
+         Pairs[1] = new Pair<View,String>(welcome,"logo_text");
+
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(splash_Activity.this, Pairs);
+            startActivity(intent,options.toBundle());
+
+
+        }
+
+    }
+
 }

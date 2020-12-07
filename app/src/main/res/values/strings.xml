@@ -6,4 +6,11 @@
     <string name="to">to</string>
     <string name="multiple_choice_user">Multiple choice user</string>
     <string name="mostafa">mostafa</string>
+    <string name="welcome_back">Welcome Back ,</string>
+    <string name="sign_in_to_continue">Sign In to continue</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">login</string>
+
+
 </resources>
