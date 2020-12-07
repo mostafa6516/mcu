@@ -73,7 +73,7 @@ public class splash_Activity extends AppCompatActivity {
             startActivity(intent,options.toBundle());
 
 
-
+            //12/8
 
 
         }
