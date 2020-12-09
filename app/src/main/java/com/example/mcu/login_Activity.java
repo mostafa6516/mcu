@@ -18,9 +18,10 @@ public class login_Activity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
         setContentView(R.layout.activity_login_);
 
+
+
+         // link from login to sign up
         View callsign_up_Activity = findViewById(R.id.sign_up);
-
-
         callsign_up_Activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
