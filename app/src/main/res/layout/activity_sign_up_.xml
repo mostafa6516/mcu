@@ -8,10 +8,18 @@
     android:orientation="vertical"
     android:background="#FFFCFC"
     android:padding="20dp">
-    <TextView
+
+
+
+
+    <ImageView
+        android:id="@+id/login_logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/slash_logo"/>
+        android:transitionName="logo_image"
+        android:src="@drawable/login_logo"
+        android:contentDescription="@string/todo" />
+
 
 
     <TextView
