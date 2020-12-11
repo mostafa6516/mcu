@@ -149,6 +149,7 @@
 
 // sign up
     <Button
+        android:id="@+id/sign_up_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
@@ -159,6 +160,7 @@
 
 //Already have an account? login
     <Button
+        android:id="@+id/back_to_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Already have an account? login"

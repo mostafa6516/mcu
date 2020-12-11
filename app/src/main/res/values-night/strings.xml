@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="e_mail_or_phone_number">E-mail or phone number</string>
+    <string name="send">send</string>
+    <string name="activation_code">activation code</string>
+    <string name="ok">OK</string>
+</resources>
