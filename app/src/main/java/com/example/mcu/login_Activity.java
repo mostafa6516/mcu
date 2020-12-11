@@ -15,25 +15,33 @@ public class login_Activity extends AppCompatActivity {
 
 
         // for full screen
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login_);
 
 
-
-         // link from login to sign up
+        // link from login to sign up
         View callsign_up_Activity = findViewById(R.id.sign_up);
         callsign_up_Activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(login_Activity.this,sign_up_Activity.class);
+                Intent intent = new Intent(login_Activity.this, sign_up_Activity.class);
                 startActivity(intent);
-                
-            }
-        }); {
-           
 
             }
-        } 
+        });
+        {
 
+            // link from login to forget password
+            View callforgetpassword_Activity = findViewById(R.id.forget_password);
+            callforgetpassword_Activity.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(login_Activity.this, forgetpassword_Activity.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
     }
+}

@@ -26,7 +26,7 @@
 
     <TextView
         android:id="@+id/mcu"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/antic"
         android:text="@string/multiple_choice_user"
@@ -42,7 +42,7 @@
 
     <TextView
         android:id="@+id/to"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/carter_one"
         android:text="@string/to"
@@ -54,12 +54,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/splash_logo"
-        app:layout_constraintVertical_bias="0.629" />
+        app:layout_constraintVertical_bias="0.7549" />
 
     <TextView
         android:id="@+id/welcome"
-        android:layout_width="360dp"
-        android:layout_height="162dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/carter_one"
         android:text="@string/welcome"
         android:textAlignment="center"
@@ -71,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/splash_logo"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

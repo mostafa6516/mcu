@@ -14,9 +14,9 @@
     <string name="forget_password">forget password?</string>
     <string name="sign_up">SIGN UP!</string>
     <string name="email_password">Email_Password</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
+    <string name="password_updated">Password Updated</string>
+    <string name="your_password_has_been_updated">your password has been updated!</string>
+    
 
 
 </resources>

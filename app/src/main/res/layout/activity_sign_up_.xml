@@ -28,7 +28,9 @@
         android:layout_marginTop="-20dp"
         android:fontFamily="@font/carter_one"
         android:text="welcome"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:textColor="#000"
+        android:transitionName="logo_text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +38,7 @@
         android:fontFamily="@font/antic"
         android:text="Sign Up to control your wi_fi"
         android:textSize="18sp"
-        />
+        android:transitionName="logo_text" />
 
 
     <LinearLayout
@@ -71,7 +73,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/username"
             app:counterEnabled="true"
-            app:counterMaxLength="20"
+            app:counterMaxLength="10"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
 
@@ -92,6 +94,7 @@
             android:layout_height="wrap_content"
             android:hint="password"
             app:passwordToggleEnabled="true"
+            android:transitionName="password_tran"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
 
@@ -149,8 +152,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:background="@color/black"
-        android:textColor="#FFFFFF"/>
+        android:background="#000"
+        android:textColor="#FFF"
+       />// android:transitionName="button_tran"
+
 
 //Already have an account? login
     <Button
@@ -159,6 +164,7 @@
         android:text="Already have an account? login"
         android:background="#00000000"
         android:textColor="@color/black"/>
+        //android:transitionName="login_signup_tran"/>
 
 
 
