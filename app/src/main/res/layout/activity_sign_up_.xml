@@ -48,23 +48,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp">
 
-         //e_mail
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/e_mail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="E-mail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
 
           //username
         <com.google.android.material.textfield.TextInputLayout
@@ -92,7 +76,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:hint="Password"
             app:passwordToggleEnabled="true"
             android:transitionName="password_tran"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -122,6 +106,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        //e_mail
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/e_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

@@ -7,12 +7,16 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class sign_up_Activity extends AppCompatActivity {
 
 
     TextInputLayout username,password,confirm_password,phone_number,e_mail;
     Button sign_up_btn,back_to_login;
+    FirebaseDatabase  rootNode;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +33,11 @@ public class sign_up_Activity extends AppCompatActivity {
         back_to_login = findViewById(R.id.back_to_login);
 
 
-        sign_up_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
 
             }
-        });
+
 
 
 
     }
-}

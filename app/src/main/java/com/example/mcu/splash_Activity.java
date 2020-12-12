@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class splash_Activity extends AppCompatActivity {
 
-    int SPLASH_SCREEN = 4000;
+    int SPLASH_SCREEN = 3000;
 
 
     //variables
@@ -59,9 +59,6 @@ public class splash_Activity extends AppCompatActivity {
 
         //animation for login screen
 
-      // pair[] Pairs = (pair[]) new Pair[2];
-       //Pairs[0] = (pair) new Pair<View,String>(splash_logo,"logo_image");
-       //Pairs[1] = (pair) new Pair<View,String>(welcome,"logo_text");
 
          Pair[] Pairs = new Pair[2];
          Pairs[0] = new Pair<View,String>(splash_logo,"logo_image");
