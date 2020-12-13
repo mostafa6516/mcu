@@ -76,7 +76,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             app:passwordToggleEnabled="true"
             android:transitionName="password_tran"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -95,7 +95,7 @@
             android:id="@+id/confirm_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="confirm password"
+            android:hint="@string/confirm_password"
             app:passwordToggleEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -114,7 +114,7 @@
             android:id="@+id/e_mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-mail"
+            android:hint="@string/e_mail"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
 
@@ -133,7 +133,7 @@
             android:id="@+id/phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone number"
+            android:hint="@string/phone_number"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
 
@@ -165,7 +165,7 @@
         android:id="@+id/back_to_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Already have an account? login"
+        android:text="@string/already_have_an_account_login"
         android:background="#00000000"
         android:textColor="@color/black"/>
         //android:transitionName="login_signup_tran"/>

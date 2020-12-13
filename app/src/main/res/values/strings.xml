@@ -9,7 +9,7 @@
     <string name="welcome_back">Welcome Back ,</string>
     <string name="sign_in_to_continue">Sign In to continue</string>
     <string name="username">Username</string>
-    <string name="password">Password</string>
+
     <string name="login">login</string>
     <string name="forget_password">forget password?</string>
     <string name="sign_up">SIGN UP!</string>
@@ -21,6 +21,11 @@
     <string name="send">send</string>
     <string name="activation_code">activation code</string>
     <string name="ok">OK</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="e_mail">E-mail</string>
+    <string name="phone_number">Phone number</string>
+    <string name="already_have_an_account_login">Already have an account? login</string>
 
 
 </resources>
