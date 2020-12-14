@@ -42,9 +42,9 @@ public class sign_up_Activity extends AppCompatActivity {
 
         // error m4rfsh leh !!!
 
-       // findViewById(sign_up_btn).setOnClickListener(v -> {
-          //  validationData();
-      //  });
+        findViewById(sign_up_btn).setOnClickListener(v -> {
+            validationData();
+        });
 
 
     }
