@@ -70,7 +70,7 @@ public class login_Activity extends AppCompatActivity {
 
             forgetpasswod.setOnClickListener(v -> {
                 Intent intent = new Intent(login_Activity.this, forgetpassword_Activity.class);
-                startActivity(intent);
+                login_Activity.this.startActivity(intent);
             });
         }
 

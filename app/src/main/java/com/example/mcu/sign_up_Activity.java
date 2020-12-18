@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,16 +18,14 @@ public class sign_up_Activity extends AppCompatActivity {
 
 
     // variables
-    TextInputLayout username, password, confirm_password, phone_number, e_mail;
-      Button sign_up_btn, back_login;
+    EditText username, password, confirm_password, phone_number, e_mail, id;
+    Button sign_up_btn, back_login;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_);
-
-
 
 
         // hooks
@@ -37,12 +36,11 @@ public class sign_up_Activity extends AppCompatActivity {
         e_mail = findViewById(R.id.e_mail);
         sign_up_btn = findViewById(R.id.sign_up_btn);
         back_login = findViewById(R.id.back_to_login);
+        id = findViewById(R.id.id_manager);
 
 
 
-        // error m4rfsh leh !!!
-
-        findViewById(sign_up_btn).setOnClickListener(v -> {
+        findViewById(R.id.sign_up_btn).setOnClickListener(v -> {
             validationData();
         });
 
@@ -52,21 +50,24 @@ public class sign_up_Activity extends AppCompatActivity {
 
     private void validationData() {
 
-        String userna = username.getEditText().toString().trim();
-        String pass = password.getEditText().toString().trim();
-        String conpass = confirm_password.getEditText().toString().trim();
-        String phone = phone_number.getEditText().toString().trim();
-        String email = e_mail.getEditText().toString().trim();
+        String userna = username.getText().toString().trim();
+        String pass = password.getText().toString().trim();
+        String conpass = confirm_password.getText().toString().trim();
+        String phone = phone_number.getText().toString().trim();
+        String email = e_mail.getText().toString().trim();
+        String idmanger = id.getText().toString().trim();
 
 
         //trust data
-
+        // user name
         if (userna.isEmpty()) {
             username.requestFocus();
             Toast.makeText(this, "User name is required", Toast.LENGTH_SHORT).show();
             return;
         }
 
+
+        // password
         if (pass.isEmpty()) {
             password.requestFocus();
             Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show();
@@ -92,24 +93,11 @@ public class sign_up_Activity extends AppCompatActivity {
         }
 
         if (!pass.equals(conpass)) {
-            Toast.makeText(this, "Password not equals Confirm Password !", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Password not like Confirm Password !", Toast.LENGTH_SHORT).show();
             return;
 
         }
-
-        if (phone.isEmpty()) {
-            phone_number.requestFocus();
-            Toast.makeText(this, "Phone is required", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (phone.length() < 11) {
-            phone_number.requestFocus();
-            Toast.makeText(this, "Invalid Phone Number \nmust be like 01*********", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-
+         // email
         if (email.isEmpty()) {
             e_mail.requestFocus();
             Toast.makeText(this, "Email is required", Toast.LENGTH_SHORT).show();
@@ -122,23 +110,50 @@ public class sign_up_Activity extends AppCompatActivity {
         }
 
 
+         // phone
+        if (phone.isEmpty()) {
+            phone_number.requestFocus();
+            Toast.makeText(this, "Phone is required", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (phone.length() < 11) {
+            phone_number.requestFocus();
+            Toast.makeText(this, "Invalid Phone Number \nmust be like 01*********", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+          // id manager
+        if (idmanger.isEmpty()) {
+            id.requestFocus();
+            Toast.makeText(this, "ID is required", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (idmanger.length() < 14) {
+            id.requestFocus();
+            Toast.makeText(this, "Invalid  ID", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+
         Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
 
 
+        {
 
-            {
 
+            // link from sign_up_Activity to login_Activity
 
-                // link from sign_up_Activity to login_Activity
+            back_login.setOnClickListener(v -> {
+                Intent intent = new Intent(sign_up_Activity.this, login_Activity.class);
+                sign_up_Activity.this.startActivity(intent);
 
-                back_login.setOnClickListener(v -> {
-                    Intent intent = new Intent(sign_up_Activity.this, login_Activity.class);
-                    startActivity(intent);
-                });
-            }
+            });
 
+        }
 
     }
-
-
 }
+
