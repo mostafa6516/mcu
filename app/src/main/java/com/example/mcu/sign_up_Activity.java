@@ -59,14 +59,12 @@ public class sign_up_Activity extends AppCompatActivity {
 
 
         //trust data
-        // user name
+         // user name
         if (userna.isEmpty()) {
             username.requestFocus();
             Toast.makeText(this, "User name is required", Toast.LENGTH_SHORT).show();
             return;
         }
-
-
         // password
         if (pass.isEmpty()) {
             password.requestFocus();
@@ -92,11 +90,11 @@ public class sign_up_Activity extends AppCompatActivity {
             return;
         }
 
-        //if (!pass.equals(conpass)) {
-           // Toast.makeText(this, "Password not like Confirm Password !", Toast.LENGTH_SHORT).show();
-           // return;
+        if (!pass.equals(conpass)) {
+            Toast.makeText(this, "Password not like Confirm Password !", Toast.LENGTH_SHORT).show();
+            return;
 
-        //}
+        }
          // email
         if (email.isEmpty()) {
             e_mail.requestFocus();
@@ -132,7 +130,7 @@ public class sign_up_Activity extends AppCompatActivity {
 
         if (idmanger.length() < 14) {
             id.requestFocus();
-            Toast.makeText(this, "Invalid  ID", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Invalid ID ", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -146,10 +144,13 @@ public class sign_up_Activity extends AppCompatActivity {
 
             // link from sign_up_Activity to login_Activity
 
-            back_login.setOnClickListener(v -> {
-                Intent intent = new Intent(sign_up_Activity.this, login_Activity.class);
-                sign_up_Activity.this.startActivity(intent);
+            back_login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(sign_up_Activity.this, login_Activity.class);
+                    sign_up_Activity.this.startActivity(intent);
 
+                }
             });
 
         }

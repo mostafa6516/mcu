@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LocationOwner.retailer_profileFragment"
-    android:background="@color/ligt_white">
+    android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

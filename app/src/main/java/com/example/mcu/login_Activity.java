@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mcu.LocationOwner.retailer_dashboard_Activity;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class login_Activity extends AppCompatActivity {
@@ -68,9 +69,12 @@ public class login_Activity extends AppCompatActivity {
 
             // link from login to forget password
 
-            forgetpasswod.setOnClickListener(v -> {
-                Intent intent = new Intent(login_Activity.this, forgetpassword_Activity.class);
-                login_Activity.this.startActivity(intent);
+            forgetpasswod.setOnClickListener(new View.OnClickListener() {
+                @Override
+               public void onClick(View v) {
+                   Intent intent = new Intent(login_Activity.this, retailer_dashboard_Activity.class);
+                   login_Activity.this.startActivity(intent);
+                }
             });
         }
 

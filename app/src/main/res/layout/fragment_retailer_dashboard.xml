@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LocationOwner.retailer_dashboardFragment"
-    android:background="@color/card1">
+    android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
