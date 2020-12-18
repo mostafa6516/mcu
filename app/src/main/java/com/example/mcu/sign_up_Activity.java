@@ -92,11 +92,11 @@ public class sign_up_Activity extends AppCompatActivity {
             return;
         }
 
-        if (!pass.equals(conpass)) {
-            Toast.makeText(this, "Password not like Confirm Password !", Toast.LENGTH_SHORT).show();
-            return;
+        //if (!pass.equals(conpass)) {
+           // Toast.makeText(this, "Password not like Confirm Password !", Toast.LENGTH_SHORT).show();
+           // return;
 
-        }
+        //}
          // email
         if (email.isEmpty()) {
             e_mail.requestFocus();
