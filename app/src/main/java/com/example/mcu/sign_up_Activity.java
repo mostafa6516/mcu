@@ -2,6 +2,7 @@ package com.example.mcu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -29,21 +30,24 @@ public class sign_up_Activity extends AppCompatActivity {
 
 
         // hooks
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        confirm_password = findViewById(R.id.confirm_password);
-        phone_number = findViewById(R.id.phone_number);
-        e_mail = findViewById(R.id.e_mail);
+        username = findViewById(R.id.username_sign_up);
+        password = findViewById(R.id.password_sign_up);
+        confirm_password = findViewById(R.id.confirm_password_sign_up);
+        phone_number = findViewById(R.id.phone_number_sign_up);
+        e_mail = findViewById(R.id.e_mail_sign_up);
         sign_up_btn = findViewById(R.id.sign_up_btn);
         back_login = findViewById(R.id.back_to_login);
-        id = findViewById(R.id.id_manager);
+        id = findViewById(R.id.id_manager_sign_up);
 
 
+        findViewById(R.id.sign_up_btn).setOnClickListener(v -> validationData());
+        // link from sign_up_Activity to login_Activity
 
-        findViewById(R.id.sign_up_btn).setOnClickListener(v -> {
-            validationData();
+        back_login.setOnClickListener(v -> {
+            Intent intent = new Intent(sign_up_Activity.this, login_Activity.class);
+            startActivity(intent);
+
         });
-
 
     }
 
@@ -59,7 +63,7 @@ public class sign_up_Activity extends AppCompatActivity {
 
 
         //trust data
-         // user name
+        // user name
         if (userna.isEmpty()) {
             username.requestFocus();
             Toast.makeText(this, "User name is required", Toast.LENGTH_SHORT).show();
@@ -95,7 +99,7 @@ public class sign_up_Activity extends AppCompatActivity {
             return;
 
         }
-         // email
+        // email
         if (email.isEmpty()) {
             e_mail.requestFocus();
             Toast.makeText(this, "Email is required", Toast.LENGTH_SHORT).show();
@@ -108,7 +112,7 @@ public class sign_up_Activity extends AppCompatActivity {
         }
 
 
-         // phone
+        // phone
         if (phone.isEmpty()) {
             phone_number.requestFocus();
             Toast.makeText(this, "Phone is required", Toast.LENGTH_SHORT).show();
@@ -121,7 +125,7 @@ public class sign_up_Activity extends AppCompatActivity {
             return;
         }
 
-          // id manager
+        // id manager
         if (idmanger.isEmpty()) {
             id.requestFocus();
             Toast.makeText(this, "ID is required", Toast.LENGTH_SHORT).show();
@@ -135,23 +139,11 @@ public class sign_up_Activity extends AppCompatActivity {
         }
 
 
-
         Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
 
 
         {
 
-
-            // link from sign_up_Activity to login_Activity
-
-            back_login.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(sign_up_Activity.this, login_Activity.class);
-                    sign_up_Activity.this.startActivity(intent);
-
-                }
-            });
 
         }
 

@@ -5,19 +5,6 @@
     <application
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -28,7 +15,11 @@
         <activity android:name=".password_success_Activity" />
         <activity android:name=".new_password_Activity" />
         <activity android:name=".forgetpassword_Activity" />
-        <activity android:name=".sign_up_Activity" />
+        <activity
+            android:name=".sign_up_Activity"
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
 
 
         <activity
@@ -45,9 +36,6 @@
             android:label="@string/multiple_choice_user">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-
-
 
 
                 <category android:name="android.intent.category.LAUNCHER" />
