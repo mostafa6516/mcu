@@ -8,6 +8,9 @@
     android:background="#00000000">
 
 
+
+
+
     <ImageView
         android:id="@+id/splash_logo"
         android:layout_width="291dp"
