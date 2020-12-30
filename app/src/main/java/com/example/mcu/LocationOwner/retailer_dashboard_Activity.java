@@ -1,10 +1,10 @@
 package com.example.mcu.LocationOwner;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.mcu.R;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
@@ -23,6 +23,8 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
 
 
         ChipNavigationBar = findViewById(R.id.bottom_nav_mnue);
+        //ChipNavigationBar.setItemSelected(R.id.bottom_nav_dashboard, isSelected true);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new retailer_dashboardFragment()).commit();
         bottomMenu();
     }
 
@@ -30,7 +32,16 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
         chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int i) {
-
+                Fragment fragment = null;
+                switch (i) {
+                    case R.id.bottom_nav_home:
+                        fragment = new retailer_dashboardFragment();
+                    case R.id.bottom_nav_cost:
+                        fragment = new retailer_manageFragment();
+                    case R.id.bottom_nav_Setting:
+                        fragment = new retailer_profileFragment();
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
             }
         });
 

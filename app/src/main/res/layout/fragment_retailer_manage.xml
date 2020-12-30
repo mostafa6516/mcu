@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LocationOwner.retailer_manageFragment"
-    android:background="@color/purple_200">
+    android:background="@color/purple_200"
+    tools:context=".LocationOwner.retailer_manageFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragment Manage"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="Fragment Cost" />
 
 </FrameLayout>

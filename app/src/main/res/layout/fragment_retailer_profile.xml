@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LocationOwner.retailer_profileFragment"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".LocationOwner.retailer_profileFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragment Profile"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="Fragment Setting" />
 
 </FrameLayout>
