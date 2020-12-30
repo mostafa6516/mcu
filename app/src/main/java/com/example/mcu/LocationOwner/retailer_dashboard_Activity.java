@@ -14,6 +14,7 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
     ChipNavigationBar chipNavigationBar;
     private Object ChipNavigationBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +27,13 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
     }
 
     private void bottomMenu() {
+        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int i) {
 
-        //ChipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.setOnItemSelectedListener()
+            }
+        });
+
 
     }
 }

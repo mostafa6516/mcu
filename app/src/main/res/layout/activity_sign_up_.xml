@@ -172,7 +172,7 @@
             android:id="@+id/sign_up_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FF000000"
+            android:background="#000"
             android:text="Sign Up"
             android:textColor="#FFFFFFFF" />
 
