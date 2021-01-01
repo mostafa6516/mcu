@@ -12,7 +12,6 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 public class retailer_dashboard_Activity extends AppCompatActivity {
 
     ChipNavigationBar chipNavigationBar;
-    private Object ChipNavigationBar;
 
 
     @Override
@@ -21,10 +20,9 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_retailer_dashboard_);
 
-
-        ChipNavigationBar = findViewById(R.id.bottom_nav_mnue);
-        //ChipNavigationBar.setItemSelected(R.id.bottom_nav_dashboard, isSelected true);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new retailer_dashboardFragment()).commit();
+        chipNavigationBar=findViewById(R.id.bottom_nav_menu);
+        chipNavigationBar.setItemSelected(R.id.bottom_nav_home,true);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new retailer_dashboardFragment()).commit();
         bottomMenu();
     }
 
@@ -32,19 +30,24 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
         chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int i) {
-                Fragment fragment = null;
-                switch (i) {
+                Fragment fragment =null;
+                switch (i){
                     case R.id.bottom_nav_home:
                         fragment = new retailer_dashboardFragment();
+                        break;
                     case R.id.bottom_nav_cost:
                         fragment = new retailer_manageFragment();
+                        break;
                     case R.id.bottom_nav_Setting:
                         fragment = new retailer_profileFragment();
+                        break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
             }
         });
 
 
     }
+
+
 }

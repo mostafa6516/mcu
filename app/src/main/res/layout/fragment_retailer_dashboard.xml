@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/purple_200"
     tools:context=".LocationOwner.retailer_dashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,6 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Fragment Home" />
+        android:text="@string/home" />
 
 </FrameLayout>

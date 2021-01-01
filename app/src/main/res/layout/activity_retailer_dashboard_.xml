@@ -6,11 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".LocationOwner.retailer_dashboard_Activity">
+    tools:context=".LocationOwner.retailer_dashboard_Activity"
+
+    >
 
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
 
-        android:id="@+id/bottom_nav_mnue"
+        android:id="@+id/bottom_nav_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
