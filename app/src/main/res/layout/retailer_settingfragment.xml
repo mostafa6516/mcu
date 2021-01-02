@@ -3,14 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
-    tools:context=".LocationOwner.retailer_dashboardFragment">
+    android:background="@color/white"
+    tools:context=".LocationOwner.retailer_settingfragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/home" />
+        android:text="@string/setting"
+        />
 
 </FrameLayout>

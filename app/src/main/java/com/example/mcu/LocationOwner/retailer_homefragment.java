@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.example.mcu.R;
 
 
-public class retailer_dashboardFragment extends Fragment {
+public class retailer_homefragment extends Fragment {
 
 
 
@@ -20,6 +20,6 @@ public class retailer_dashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_retailer_dashboard, container, false);
+        return inflater.inflate(R.layout.retailer_homefragment, container, false);
     }
 }

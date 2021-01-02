@@ -12,10 +12,10 @@ import com.example.mcu.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link retailer_manageFragment#newInstance} factory method to
+ * Use the {@link retailer_settingfragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class retailer_manageFragment extends Fragment {
+public class retailer_settingfragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class retailer_manageFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public retailer_manageFragment() {
+    public retailer_settingfragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class retailer_manageFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment retailer_manageFragment.
+     * @return A new instance of fragment retailer_profileFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static retailer_manageFragment newInstance(String param1, String param2) {
-        retailer_manageFragment fragment = new retailer_manageFragment();
+    public static retailer_settingfragment newInstance(String param1, String param2) {
+        retailer_settingfragment fragment = new retailer_settingfragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class retailer_manageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_retailer_manage, container, false);
+        return inflater.inflate(R.layout.retailer_settingfragment, container, false);
     }
 }

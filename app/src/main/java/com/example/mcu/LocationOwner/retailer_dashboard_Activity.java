@@ -22,7 +22,7 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
 
         chipNavigationBar=findViewById(R.id.bottom_nav_menu);
         chipNavigationBar.setItemSelected(R.id.bottom_nav_home,true);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new retailer_dashboardFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new retailer_homefragment()).commit();
         bottomMenu();
     }
 
@@ -33,13 +33,13 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
                 Fragment fragment =null;
                 switch (i){
                     case R.id.bottom_nav_home:
-                        fragment = new retailer_dashboardFragment();
+                        fragment = new retailer_homefragment();
                         break;
                     case R.id.bottom_nav_cost:
-                        fragment = new retailer_manageFragment();
+                        fragment = new retailer_costfragment();
                         break;
                     case R.id.bottom_nav_Setting:
-                        fragment = new retailer_profileFragment();
+                        fragment = new retailer_settingfragment();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();

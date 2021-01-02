@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class splash_Activity extends AppCompatActivity {
 
-    int SPLASH_SCREEN = 3000;
+    int SPLASH_SCREEN = 2000;
 
 
     //variables

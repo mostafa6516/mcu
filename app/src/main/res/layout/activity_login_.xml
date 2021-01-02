@@ -53,36 +53,40 @@
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
+        <!--          username-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/username">
+            android:hint="@string/username"
+            >
 
-            <com.google.android.material.textfield.TextInputEditText
+
+            <EditText
+                android:id="@+id/username_log"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            android:transitionName="username_tran"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
 
+        <!--        password-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             android:transitionName="password_tran"
-            app:passwordToggleEnabled="true"
+            app:passwordToggleEnabled="true">
 
-            >
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
+                android:id="@+id/password_log"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
-
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,7 +119,7 @@
 
 
         <Button
-            android:id="@+id/sign_up"
+            android:id="@+id/sign_up_log"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
