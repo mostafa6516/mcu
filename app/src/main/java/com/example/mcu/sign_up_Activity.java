@@ -1,5 +1,6 @@
 package com.example.mcu;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
@@ -20,6 +21,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class sign_up_Activity extends AppCompatActivity {
 
@@ -29,6 +37,7 @@ public class sign_up_Activity extends AppCompatActivity {
     Button sign_up_btn, back_login;
     // firebase
     private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firestore;
 
 
     @Override
@@ -49,6 +58,8 @@ public class sign_up_Activity extends AppCompatActivity {
 
         // firebase
         firebaseAuth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
+
 
         findViewById(R.id.sign_up_btn).setOnClickListener(v ->
                 sign_up_Activity.this.validationData());
@@ -110,7 +121,7 @@ public class sign_up_Activity extends AppCompatActivity {
 
         if (conpass.isEmpty()) {
             confirm_password.requestFocus();
-           // Toast.makeText(this, "Confirm Password is required", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "Confirm Password is required", Toast.LENGTH_SHORT).show();
 
 
             // change to Alert
@@ -149,7 +160,7 @@ public class sign_up_Activity extends AppCompatActivity {
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             e_mail.requestFocus();
-           // Toast.makeText(this, "Invalid Email address \nEmail must be like example@company.com", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "Invalid Email address \nEmail must be like example@company.com", Toast.LENGTH_SHORT).show();
 
 
             // change to Alert
@@ -161,7 +172,7 @@ public class sign_up_Activity extends AppCompatActivity {
         // phone
         if (phone.isEmpty()) {
             phone_number.requestFocus();
-           // Toast.makeText(this, "Phone is required", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "Phone is required", Toast.LENGTH_SHORT).show();
 
 
             // change to Alert
@@ -199,12 +210,11 @@ public class sign_up_Activity extends AppCompatActivity {
         }
 
 
-       
         // Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
-        
-        
+
+
         // to sign up from fire base
-        signupwithfirebase(userna,pass);
+        signupwithfirebase(userna, pass);
 
         {
 
@@ -221,10 +231,11 @@ public class sign_up_Activity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task< AuthResult > task) {
 
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
+                            saveUserData();
 
-                        }else {
+                        } else {
                             showAlert(task.getException().getMessage());
                         }
                     }
@@ -232,14 +243,72 @@ public class sign_up_Activity extends AppCompatActivity {
 
     }
 
-    void showAlert(String msg) {
-        new AlertDialog.Builder(this)
-                .setTitle("attention!")
-                .setMessage(msg)
-                .setIcon(R.drawable.ic_attention)
-                .setPositiveButton("Okay!", null)
-                .create().show();
-    }
-}
+    private void saveUserData() {
 
+        if (firebaseAuth.getCurrentUser() != null) {
+
+            String userID = firebaseAuth.getCurrentUser().getUid();
+
+
+            // Create a new user with a first and last name
+            Map< String, Object > user = new HashMap<>();
+            user.put("id", userID);
+            user.put("username", username.getText().toString().trim());
+            user.put("password", password.getText().toString().trim());
+            user.put("confirm_password", confirm_password.getText().toString().trim());
+            user.put("phone_number", phone_number.getText().toString().trim());
+            user.put("E_mail", e_mail.getText().toString().trim());
+            user.put("ID", id.getText().toString().trim());
+
+
+
+            firestore.collection("Users")
+                    .document(userID)
+                    .set(user)
+                    .addOnCompleteListener ( new OnCompleteListener < Void > ( ) {
+                        @Override
+                        public void onComplete ( @NonNull Task < Void > task ) {
+
+                        if (task.isSuccessful()){
+
+                            new AlertDialog.Builder(sign_up_Activity.this )
+                                .setTitle("congratulation")
+                                .setMessage("Account created Successful")
+                                .setIcon(R.drawable.ic_done)
+                                .setPositiveButton( "Okay!",
+                                        (dialog, which) -> {
+
+
+                                    startActivity( new Intent( sign_up_Activity.this, login_Activity.class ) );
+
+                                })
+                                .create().show();
+
+                    }else {
+                        showAlert("Error \n " +task.getException().getMessage());
+                    }
+
+                }
+
+                        @NotNull
+                        private OnCompleteListener < Void > getOnCompleteListener () {
+                            return this;
+                        }
+                    });
+
+
+
+                    }
+        }
+
+
+        void showAlert (String msg){
+            new AlertDialog.Builder(this)
+                    .setTitle("attention!")
+                    .setMessage(msg)
+                    .setIcon(R.drawable.ic_attention)
+                    .setPositiveButton("Okay!", null)
+                    .create().show();
+        }
+    }
 
