@@ -24,22 +24,26 @@
 
 
         <TextView
+            android:id="@+id/signup_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-30dp"
+            android:layout_marginTop="-25dp"
             android:fontFamily="@font/carter_one"
             android:text="w e l c o m e "
             android:textColor="#000"
             android:textSize="40sp"
-            android:transitionName="logo_text" />
+            android:transitionName="logo_text"
+            android:layout_below="@+id/login_logo"/>
 
         <TextView
+            android:id="@+id/singup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/antic"
             android:text="Sign Up to control your wi_fi"
             android:textSize="18sp"
-            android:transitionName="logo_text" />
+            android:transitionName="logo_text"
+            android:layout_below="@+id/signup_welcome"/>
 
 
         <LinearLayout
@@ -57,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/username"
                 app:counterEnabled="true"
-                app:counterMaxLength="10">
+                app:counterMaxLength="10"
+                >
 
 
                 <EditText
@@ -165,16 +170,40 @@
 
 
         </LinearLayout>
-
-        <!--    sign up-->
-
-        <Button
-            android:id="@+id/sign_up_btn"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000"
-            android:text="Sign Up"
-            android:textColor="#FFFFFFFF" />
+            android:layout_centerInParent="true"
+            >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+
+            <ProgressBar
+                android:id="@+id/progressbar_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/progressbar_backgrund"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+        <!--    sign up-->
+
+
+
+            <Button
+                android:id="@+id/sign_up_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000"
+                android:text="Sign Up"
+                android:textColor="#FFFFFFFF" />
 
 
         <!--    Already have an account? login-->
@@ -186,8 +215,11 @@
             android:layout_marginTop="5dp"
             android:background="#00000000"
             android:text="@string/already_have_an_account_login"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:layout_below="@+id/sign_up_btn"/>
+        </RelativeLayout>
+        </LinearLayout>
 
-    </LinearLayout>
+
 
 </androidx.core.widget.NestedScrollView>
