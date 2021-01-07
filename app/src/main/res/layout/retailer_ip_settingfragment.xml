@@ -11,37 +11,41 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/black"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:text="Time"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IP Setting"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:fontFamily="@font/bangers"
+        android:layout_margin="25dp"/>
 
-    <Spinner
+
+    <Button
         android:id="@+id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp" />
+        android:background="#12121212"
+        android:layout_margin="15dp"
+        android:textAllCaps="true"
+        android:outlineSpotShadowColor="@color/black"
+        android:text="Time"
+        android:textColor="@color/black"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Speed"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
 
-    <Spinner
+    <Button
         android:id="@+id/speed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp" />
+        android:background="#12121212"
+        android:layout_margin="15dp"
+        android:text="Speed"
+        android:textColor="@color/black" />
 
     <Button
         android:layout_width="match_parent"

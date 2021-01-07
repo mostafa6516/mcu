@@ -45,6 +45,7 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
                         fragment = new retailer_ip_settingfragment();
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+
             }
         });
 

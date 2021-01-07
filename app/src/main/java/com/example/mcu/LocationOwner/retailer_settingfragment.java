@@ -62,5 +62,7 @@ public class retailer_settingfragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.retailer_settingfragment, container, false);
+
+
     }
 }
