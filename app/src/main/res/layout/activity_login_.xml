@@ -97,8 +97,19 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/forget_password"
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+
+
+
+        <CheckBox
+            android:id="@+id/remember_melogin"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -106,12 +117,29 @@
             android:background="#00000000"
             android:elevation="0dp"
             android:fontFamily="@font/antic"
-            android:text="@string/forget_password"
+            android:text="Remember me "
             android:textColor="#000000"
             android:transitionName="forget_tran"
             tools:ignore="RtlHardcoded"
             tools:targetApi="lollipop" />
 
+
+
+            <Button
+                android:id="@+id/forget_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="5dp"
+                android:background="#00000000"
+                android:elevation="0dp"
+                android:fontFamily="@font/antic"
+                android:text="@string/forget_password"
+                android:textColor="#000000"
+                android:transitionName="forget_tran"
+                tools:ignore="RtlHardcoded"
+                tools:targetApi="lollipop" />
+        </LinearLayout>
         <Button
             android:id="@+id/login_btn"
             android:layout_width="match_parent"

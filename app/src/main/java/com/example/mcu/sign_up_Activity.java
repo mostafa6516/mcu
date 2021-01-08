@@ -266,6 +266,7 @@ public class sign_up_Activity extends AppCompatActivity {
                             new AlertDialog.Builder(sign_up_Activity.this )
                                 .setTitle("congratulation")
                                 .setMessage("Account created Successful")
+                                .setCancelable (false)
                                 .setIcon(R.drawable.ic_done)
                                 .setPositiveButton( "Okay!",
                                         (dialog, which) -> {
