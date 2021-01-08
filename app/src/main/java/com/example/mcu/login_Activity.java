@@ -42,7 +42,7 @@ public class login_Activity extends AppCompatActivity {
         loginlogo = findViewById(R.id.login_logo);
         welcomeback = findViewById(R.id.welcome_back);
         sign_in_to_continue = findViewById(R.id.sign_in_to_continue);
-        usernamelogin = findViewById(R.id.username_log);
+        usernamelogin = findViewById(R.id.email_log);
         passwordlogin = findViewById(R.id.password_log);
 
 

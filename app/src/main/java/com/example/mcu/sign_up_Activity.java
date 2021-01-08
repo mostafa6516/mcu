@@ -36,7 +36,7 @@ public class sign_up_Activity extends AppCompatActivity {
 
     // variables
 
-    EditText username, password, confirm_password, phone_number, e_mail, id;
+    EditText  password, confirm_password, phone_number, e_mail, id;
     Button sign_up_btn, back_login;
     private ProgressBar progressBar;
     // firebase
@@ -54,11 +54,10 @@ public class sign_up_Activity extends AppCompatActivity {
 
 
         // hooks
-        username = findViewById(R.id.username_sign_up);
+        e_mail = findViewById(R.id.e_mail_sign_up);
         password = findViewById(R.id.password_sign_up);
         confirm_password = findViewById(R.id.confirm_password_sign_up);
         phone_number = findViewById(R.id.phone_number_sign_up);
-        e_mail = findViewById(R.id.e_mail_sign_up);
         sign_up_btn = findViewById(R.id.sign_up_btn);
         back_login = findViewById(R.id.back_to_login);
         id = findViewById(R.id.id_manager_sign_up);
@@ -84,24 +83,31 @@ public class sign_up_Activity extends AppCompatActivity {
 
     private void validationData() {
 
-        String userna = username.getText().toString().trim();
+        String email = e_mail.getText().toString().trim();
         String pass = password.getText().toString().trim();
         String conpass = confirm_password.getText().toString().trim();
         String phone = phone_number.getText().toString().trim();
-        String email = e_mail.getText().toString().trim();
         String idmanger = id.getText().toString().trim();
 
 
         //trust data
-        // user name
-        if (userna.isEmpty()) {
-            username.requestFocus();
-            // first option
-            // Toast.makeText(this, "User name is required", Toast.LENGTH_SHORT).show();
+        // email
+        if (email.isEmpty()) {
+            e_mail.requestFocus();
+            //Toast.makeText(this, "Email is required", Toast.LENGTH_SHORT).show();
 
 
             // change to Alert
-            showAlert("User name is required");
+            showAlert("Email is required");
+            return;
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            e_mail.requestFocus();
+            // Toast.makeText(this, "Invalid Email address \nEmail must be like example@company.com", Toast.LENGTH_SHORT).show();
+
+
+            // change to Alert
+            showAlert("Invalid Email address \nEmail must be like example@company.com");
             return;
         }
         // password
@@ -156,25 +162,7 @@ public class sign_up_Activity extends AppCompatActivity {
             return;
 
         }
-        // email
-        if (email.isEmpty()) {
-            e_mail.requestFocus();
-            //Toast.makeText(this, "Email is required", Toast.LENGTH_SHORT).show();
 
-
-            // change to Alert
-            showAlert("Email is required");
-            return;
-        }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            e_mail.requestFocus();
-            // Toast.makeText(this, "Invalid Email address \nEmail must be like example@company.com", Toast.LENGTH_SHORT).show();
-
-
-            // change to Alert
-            showAlert("Invalid Email address \nEmail must be like example@company.com");
-            return;
-        }
 
 
         // phone
@@ -218,18 +206,18 @@ public class sign_up_Activity extends AppCompatActivity {
         }
         // Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
         // to sign up from fire base
-        signupwithfirebase(userna, pass);
+        signupwithfirebase(email, pass);
         {
 
         }
     }
 
-    private void signupwithfirebase(String userna, String pass) {
+    private void signupwithfirebase(String email, String pass) {
 
         progressBar.setVisibility ( View.VISIBLE );
 
 
-        firebaseAuth.createUserWithEmailAndPassword(userna, pass)
+        firebaseAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(new OnCompleteListener< AuthResult >() {
                     @Override
                     public void onComplete(@NonNull Task< AuthResult > task) {
@@ -258,11 +246,10 @@ public class sign_up_Activity extends AppCompatActivity {
             // Create a new user with a first and last name
             Map< String, Object > user = new HashMap<>();
             user.put("id", userID);
-            user.put("username", username.getText().toString().trim());
+            user.put("E_mail", e_mail.getText().toString().trim());
             user.put("password", password.getText().toString().trim());
             user.put("confirm_password", confirm_password.getText().toString().trim());
             user.put("phone_number", phone_number.getText().toString().trim());
-            user.put("E_mail", e_mail.getText().toString().trim());
             user.put("ID", id.getText().toString().trim());
 
 

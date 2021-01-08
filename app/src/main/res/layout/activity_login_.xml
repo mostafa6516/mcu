@@ -53,22 +53,28 @@
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
-        <!--          username-->
+
+
+        <!--        e_mail-->
+
         <com.google.android.material.textfield.TextInputLayout
+
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/username"
-            >
+            android:hint="@string/e_mail">
 
 
             <EditText
-                android:id="@+id/username_log"
+                android:id="@+id/email_log"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
 
         <!--        password-->
@@ -78,7 +84,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/password"
             android:transitionName="password_tran"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="5dp">
 
 
             <EditText
