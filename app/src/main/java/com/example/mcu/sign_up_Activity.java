@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,8 +35,10 @@ public class sign_up_Activity extends AppCompatActivity {
 
 
     // variables
+
     EditText username, password, confirm_password, phone_number, e_mail, id;
     Button sign_up_btn, back_login;
+    private ProgressBar progressBar;
     // firebase
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firestore;
@@ -59,6 +62,7 @@ public class sign_up_Activity extends AppCompatActivity {
         sign_up_btn = findViewById(R.id.sign_up_btn);
         back_login = findViewById(R.id.back_to_login);
         id = findViewById(R.id.id_manager_sign_up);
+        progressBar=findViewById ( R.id.progressbar_signup );
 
         // firebase
         firebaseAuth = FirebaseAuth.getInstance();
@@ -212,23 +216,18 @@ public class sign_up_Activity extends AppCompatActivity {
             showAlert("Invalid ID");
             return;
         }
-
-
         // Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
-
-
         // to sign up from fire base
         signupwithfirebase(userna, pass);
-
         {
 
-
         }
-
-
     }
 
     private void signupwithfirebase(String userna, String pass) {
+
+        progressBar.setVisibility ( View.VISIBLE );
+
 
         firebaseAuth.createUserWithEmailAndPassword(userna, pass)
                 .addOnCompleteListener(new OnCompleteListener< AuthResult >() {
@@ -240,6 +239,8 @@ public class sign_up_Activity extends AppCompatActivity {
                             saveUserData();
 
                         } else {
+                            progressBar.setVisibility ( View.GONE );
+
                             showAlert(task.getException().getMessage());
                         }
                     }
@@ -274,7 +275,7 @@ public class sign_up_Activity extends AppCompatActivity {
                         public void onComplete ( @NonNull Task < Void > task ) {
 
                         if (task.isSuccessful()){
-
+                            progressBar.setVisibility ( View.GONE );
                             new AlertDialog.Builder(sign_up_Activity.this )
                                 .setTitle("congratulation")
                                 .setMessage("Account created Successful")
@@ -289,7 +290,9 @@ public class sign_up_Activity extends AppCompatActivity {
                                 .create().show();
 
                     }else {
-                        showAlert("Error \n " +task.getException().getMessage());
+                            progressBar.setVisibility ( View.GONE );
+
+                            showAlert("Error \n " +task.getException().getMessage());
                     }
 
                 }

@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
-        android:shadowColor="@color/black"
+        android:shadowColor="#000"
         android:text="Save"
         android:textColor="@color/white"
         android:textStyle="bold" />

@@ -8,12 +8,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mcu">
-        <activity android:name=".LocationOwner.retailer_ip_settingfragment"></activity>
+        <activity android:name=".LocationOwner.retailer_ip_settingfragment"/>
         <activity android:name=".LocationOwner.retailer_dashboard_Activity" />
         <activity android:name=".home_Activity" />
         <activity android:name=".password_success_Activity" />
         <activity android:name=".new_password_Activity" />
         <activity android:name=".forgetpassword_Activity" />
+
+
         <activity
             android:name=".sign_up_Activity"
             android:windowSoftInputMode="adjustResize"></activity>
