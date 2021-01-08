@@ -1,9 +1,5 @@
 package com.example.mcu;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,14 +13,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.mcu.LocationOwner.retailer_dashboard_Activity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
+import com.example.mcu.LocationOwner.retailer_dashboard_Activity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class login_Activity extends AppCompatActivity {
 
@@ -90,12 +83,9 @@ public class login_Activity extends AppCompatActivity {
 
             // link from login to forget password
 
-            forgetpasswod.setOnClickListener ( new View.OnClickListener ( ) {
-                @Override
-                public void onClick ( View v ) {
-                    Intent intent = new Intent ( login_Activity.this, retailer_dashboard_Activity.class );
-                    login_Activity.this.startActivity ( intent );
-                }
+            forgetpasswod.setOnClickListener ( v -> {
+                Intent intent = new Intent ( login_Activity.this, forgetpassword_Activity.class );
+                login_Activity.this.startActivity ( intent );
             } );
         }
 
