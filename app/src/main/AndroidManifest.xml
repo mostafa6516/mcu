@@ -3,13 +3,12 @@
     package="com.example.mcu">
 
     <application
-
-
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mcu">
+        <activity android:name=".CosttingActivity"></activity>
         <activity android:name=".LocationOwner.retailer_dashboard_Activity" />
         <activity android:name=".home_Activity" />
         <activity android:name=".password_success_Activity" />
@@ -17,11 +16,7 @@
         <activity android:name=".forgetpassword_Activity" />
         <activity
             android:name=".sign_up_Activity"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
-
-
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".splash_Activity"
             android:label="@string/multiple_choice_user">
@@ -36,7 +31,6 @@
             android:label="@string/multiple_choice_user">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
