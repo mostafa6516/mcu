@@ -16,17 +16,19 @@
 
         <ImageView
             android:id="@+id/login_logo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/login_logo"
             android:transitionName="logo_image" />
 
 
         <TextView
+            android:id="@+id/signup_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-30dp"
+            android:layout_below="@+id/login_logo"
+            android:layout_marginTop="-25dp"
             android:fontFamily="@font/carter_one"
             android:text="w e l c o m e "
             android:textColor="#000"
@@ -34,8 +36,10 @@
             android:transitionName="logo_text" />
 
         <TextView
+            android:id="@+id/singup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/signup_welcome"
             android:fontFamily="@font/antic"
             android:text="Sign Up to control your wi_fi"
             android:textSize="18sp"
@@ -45,26 +49,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
 
-            <!--          username-->
+
+            <!--        e_mail-->
+
             <com.google.android.material.textfield.TextInputLayout
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/username"
-                app:counterEnabled="true"
-                app:counterMaxLength="10">
+                android:hint="@string/e_mail">
 
 
                 <EditText
-                    android:id="@+id/username_sign_up"
+                    android:id="@+id/e_mail_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,23 +112,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--        e_mail-->
 
-            <com.google.android.material.textfield.TextInputLayout
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/e_mail">
-
-
-                <EditText
-                    android:id="@+id/e_mail_sign_up"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
 
             <!--        phone number-->
@@ -166,28 +155,59 @@
 
         </LinearLayout>
 
-        <!--    sign up-->
-
-        <Button
-            android:id="@+id/sign_up_btn"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000"
-            android:text="Sign Up"
-            android:textColor="#FFFFFFFF" />
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
 
 
-        <!--    Already have an account? login-->
 
-        <Button
-            android:id="@+id/back_to_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#00000000"
-            android:text="@string/already_have_an_account_login"
-            android:textColor="@color/black" />
+                <!--    sign up-->
+                <Button
+                    android:id="@+id/sign_up_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#000"
+                    android:text="Sign Up"
+                    android:textColor="#FFFFFFFF" />
 
+
+
+                <!--    Already have an account? login-->
+                <Button
+                    android:id="@+id/back_to_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sign_up_btn"
+                    android:layout_marginTop="5dp"
+                    android:background="#00000000"
+                    android:text="@string/already_have_an_account_login"
+                    android:textColor="@color/black" />
+
+
+            </RelativeLayout>
+
+
+            <ProgressBar
+                android:id="@+id/progressbar_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/progressbar_backgrund"
+                android:visibility="gone" />
+
+
+
+
+        </RelativeLayout>
     </LinearLayout>
+
 
 </androidx.core.widget.NestedScrollView>

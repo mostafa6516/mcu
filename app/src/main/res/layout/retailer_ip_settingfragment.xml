@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".LocationOwner.retailer_dashboard_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IP Setting"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:fontFamily="@font/bangers"
+        android:layout_margin="25dp"/>
+
+
+    <Button
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#12121212"
+        android:layout_margin="15dp"
+        android:textAllCaps="true"
+        android:outlineSpotShadowColor="@color/black"
+        android:text="Time"
+        android:textColor="@color/black"/>
+
+
+    <Button
+        android:id="@+id/speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#12121212"
+        android:layout_margin="15dp"
+        android:text="Speed"
+        android:textColor="@color/black" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:shadowColor="#000"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="Hour Time"
+        android:textColorHint="@color/black"
+        app:boxBackgroundColor="#EFECEC"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeWidthFocused="2dp"
+        app:endIconTint="@color/black"
+        app:startIconDrawable="@drawable/time_icon"
+        app:startIconTint="@color/black" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:shadowColor="@color/black"
+        android:text="Total Cost"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+    <EditText
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="Cost"
+        android:textColorHint="@color/black"
+        app:boxBackgroundColor="#EFECEC"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeWidthFocused="2dp"
+        app:endIconTint="@color/black"
+        app:startIconDrawable="@drawable/cost_icon"
+        app:startIconTint="@color/black" />
+
+
+
+
+</LinearLayout>
