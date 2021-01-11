@@ -12,42 +12,49 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"/>
+        android:background="@color/black" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IP Setting"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textAllCaps="true"
+        android:layout_margin="25dp"
         android:fontFamily="@font/bangers"
-        android:layout_margin="25dp"/>
-
-
-    <Button
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#12121212"
-        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="IP Setting"
         android:textAllCaps="true"
-        android:outlineSpotShadowColor="@color/black"
-        android:text="Time"
-        android:textColor="@color/black"/>
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
 
-    <Button
-        android:id="@+id/speed"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#12121212"
-        android:layout_margin="15dp"
-        android:text="Speed"
-        android:textColor="@color/black" />
+        android:orientation="vertical">
+
+// time
+        <Spinner
+            android:id="@+id/time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            />
+
+//speed
+        <Spinner
+            android:id="@+id/speed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+
+
+    </LinearLayout>
 
     <Button
+
+        android:id="@+id/save"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
@@ -56,44 +63,25 @@
         android:textColor="@color/white"
         android:textStyle="bold" />
 
-    <EditText
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Hour Time"
-        android:textColorHint="@color/black"
-        app:boxBackgroundColor="#EFECEC"
-        app:boxStrokeColor="@color/black"
-        app:boxStrokeWidthFocused="2dp"
-        app:endIconTint="@color/black"
-        app:startIconDrawable="@drawable/time_icon"
-        app:startIconTint="@color/black" />
+        android:hint="Total Cost"
+        android:layout_marginTop="70dp">
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:shadowColor="@color/black"
-        android:text="Total Cost"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-    <EditText
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Cost"
-        android:textColorHint="@color/black"
-        app:boxBackgroundColor="#EFECEC"
-        app:boxStrokeColor="@color/black"
-        app:boxStrokeWidthFocused="2dp"
-        app:endIconTint="@color/black"
-        app:startIconDrawable="@drawable/cost_icon"
-        app:startIconTint="@color/black" />
+        <EditText
+            android:id="@+id/total_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false" />
 
-
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </LinearLayout>
