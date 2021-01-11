@@ -6,6 +6,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.mcu.LocationOwner.homeData.retailer_homefragment;
 import com.example.mcu.R;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
@@ -22,7 +23,7 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
 
         chipNavigationBar=findViewById(R.id.bottom_nav_menu);
         chipNavigationBar.setItemSelected(R.id.bottom_nav_home,true);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new retailer_homefragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new retailer_homefragment ()).commit();
         bottomMenu();
     }
 
