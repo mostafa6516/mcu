@@ -4,6 +4,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
+import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -92,7 +94,7 @@ public class login_Activity extends AppCompatActivity {
 
         //onclick to login
         findViewById ( R.id.login_btn ).setOnClickListener ( v ->
-                login_Activity.this.validationData ( ) );
+               validationData ( ) );
 
     }
 
@@ -110,6 +112,13 @@ public class login_Activity extends AppCompatActivity {
 
             // change to Alert
             showAlert ( "User name is required" );
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(emaillogin).matches()) {
+            email_login.requestFocus();
+
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
             return;
         }
         // password
@@ -160,12 +169,11 @@ public class login_Activity extends AppCompatActivity {
 
                         goToMain();
 
-                    } else
+                    } else {
                         progressBar.setVisibility ( View.GONE );
+                        showAlert ( "Error \n " + task.getException ( ).getMessage ( ) );
 
-                        showAlert( "Error \n "+ task.getException().getMessage());
-
-
+                    }
                 } );
     }
 
