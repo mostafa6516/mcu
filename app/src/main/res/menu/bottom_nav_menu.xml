@@ -22,10 +22,5 @@
         android:title="@string/setting"
         app:cnb_backgroundColor="@color/black" />
 
-    <item
-        android:id="@+id/bottom_nav_ip_Setting"
-        android:icon="@drawable/ip_setting_icon"
-        android:title="ip setting"
-        app:cnb_backgroundColor="@color/black" />
-
+   
 </menu>
