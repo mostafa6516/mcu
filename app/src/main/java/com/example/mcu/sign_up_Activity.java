@@ -69,7 +69,7 @@ public class sign_up_Activity extends AppCompatActivity {
 
 
         findViewById(R.id.sign_up_btn).setOnClickListener(v ->
-                sign_up_Activity.this.validationData());
+                validationData());
         // link from sign_up_Activity to login_Activity
 
         back_login.setOnClickListener(v -> {
