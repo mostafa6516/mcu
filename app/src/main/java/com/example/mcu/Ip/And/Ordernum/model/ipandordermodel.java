@@ -17,6 +17,10 @@ public class ipandordermodel {
     }
 
 
+    public ipandordermodel(){
+
+    }
+
     public double getIp () {
         return ip;
     }
@@ -32,13 +36,4 @@ public class ipandordermodel {
     public void setOrder ( int order ) {
         this.order = order;
     }
-
-    public ipandordermodel ( FragmentActivity activity, List < ipandordermodel > list ){
-
-
-
-
-    }
-
-
 }
