@@ -72,11 +72,14 @@ public class sign_up_Activity extends AppCompatActivity {
                 validationData());
         // link from sign_up_Activity to login_Activity
 
-        back_login.setOnClickListener(v -> {
-            Intent intent = new Intent(sign_up_Activity.this, login_Activity.class);
-            startActivity(intent);
+        back_login.setOnClickListener( new View.OnClickListener ( ) {
+            @Override
+            public void onClick ( View v ) {
+                Intent intent = new Intent ( sign_up_Activity.this, login_Activity.class );
+                sign_up_Activity.this.startActivity ( intent );
 
-        });
+            }
+        } );
 
     }
 

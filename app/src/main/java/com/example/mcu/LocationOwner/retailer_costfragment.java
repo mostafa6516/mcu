@@ -1,5 +1,6 @@
-package com.example.mcu.LocationOwner;
+   package com.example.mcu.LocationOwner;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.mcu.R;
 
@@ -16,6 +19,12 @@ import com.example.mcu.R;
  * create an instance of this fragment.
  */
 public class retailer_costfragment extends Fragment {
+    Activity referenceActivity;
+    View parentHolder;
+
+    Button calc;
+    EditText num1 , num2 , res;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +69,31 @@ public class retailer_costfragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        referenceActivity = getActivity();
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.retailer_costfragment, container, false);
+        parentHolder = inflater.inflate(R.layout.retailer_costfragment, container, false);
+
+        calc = (Button) parentHolder.findViewById(R.id.btn_cost);
+        num1 = (EditText) parentHolder.findViewById(R.id.total_hours);
+        num2 = (EditText) parentHolder.findViewById(R.id.price_per_hour);
+        res = (EditText) parentHolder.findViewById(R.id.total_cost);
+
+
+        calc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int Number1=Integer.parseInt(num1.getText().toString());
+                int Number2=Integer.parseInt(num2.getText().toString());
+                int result=Number1* Number2;
+                res.setText(String.valueOf(result));
+            }
+        });
+
+
+
+        return parentHolder;
     }
+
+
 }

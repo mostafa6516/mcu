@@ -4,4 +4,5 @@
     <string name="send">send</string>
     <string name="activation_code">activation code</string>
     <string name="ok">OK</string>
+    <string name="dark">Dark</string>
 </resources>

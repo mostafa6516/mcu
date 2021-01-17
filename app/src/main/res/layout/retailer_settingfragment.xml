@@ -1,156 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="15dp"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".LocationOwner.retailer_dashboard_Activity">
     <!-- TODO: Update blank fragment layout -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black">
 
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/login_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/login_logo"
-        android:transitionName="logo_image" />
-
-
-    <TextView
-        android:id="@+id/costting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="17dp"
-        android:text="Setting"
-        android:textStyle="bold"
-        android:textSize="20sp" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="language"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_700"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:textStyle="bold" />
 
     <Switch
         android:id="@+id/lan_en"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="English"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:checked="true"
         />
 
     <Switch
         android:id="@+id/lan_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="عربي"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:textStyle="bold" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Themes"
-        android:textStyle="bold"
+        android:textColor="@color/purple_700"
         android:textSize="30sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="10dp"/>
-    <Switch
-        android:id="@+id/the_dark"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dark"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"/>
+        android:textStyle="bold" />
+
+
+
     <Switch
         android:id="@+id/the_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Light"
         android:textColor="@color/black"
-        android:textStyle="bold"
         android:textSize="15sp"
-        android:layout_marginTop="10dp"/>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="notifications"
         android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="10dp"/>
-
-    <Spinner
-        android:id="@+id/spi_notifications"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:layout_marginTop="10dp"/>
+        android:checked="true"
+        />
 
     <Switch
+        android:id="@+id/the_dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="fingerprint lock"
+        android:layout_marginTop="10dp"
+        android:text="@string/dark"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_marginTop="20dp"
         >
 
-    <Button
-        android:id="@+id/add_user"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add User"
-        android:layout_margin="10dp"
 
-        app:backgroundTint="#000"/>
-    <Button
-        android:id="@+id/About_Us"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=" About Us"
-        android:layout_margin="10dp"
-        app:backgroundTint="#000"/>
-    <Button
-        android:id="@+id/log_out"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:layout_margin="10dp"
-        app:backgroundTint="#000"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="notifications"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
         />
+
+    <Spinner
+        android:id="@+id/spi_notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:layout_marginLeft="165dp"/>
+
+    </LinearLayout>
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="fingerprint lock"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/add_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Add User"
+
+            app:backgroundTint="#000" />
+
+        <Button
+            android:id="@+id/about_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text=" About Us"
+            app:backgroundTint="#000" />
+
+        <Button
+            android:id="@+id/log_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Logout"
+            app:backgroundTint="#000" />
     </LinearLayout>
 
 
