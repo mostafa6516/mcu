@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.mcu.LocationOwner.homeData.retailer_homefragment;
-import com.example.mcu.LocationOwner.homeData.retailer_profile;
 import com.example.mcu.R;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 

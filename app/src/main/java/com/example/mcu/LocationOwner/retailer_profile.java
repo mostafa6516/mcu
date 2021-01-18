@@ -1,4 +1,4 @@
-package com.example.mcu.LocationOwner.homeData;
+package com.example.mcu.LocationOwner;
 
 import android.os.Bundle;
 
