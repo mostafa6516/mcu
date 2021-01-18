@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.mcu.LocationOwner.homeData.retailer_homefragment;
+import com.example.mcu.LocationOwner.homeData.retailer_profile;
 import com.example.mcu.R;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
@@ -44,6 +45,8 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
                         break;
                     case R.id.bottom_nav_ip_Setting:
                         fragment = new retailer_ip_settingfragment();
+                        case R.id.bottom_nav_profile:
+                        fragment = new retailer_profile();
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
 
