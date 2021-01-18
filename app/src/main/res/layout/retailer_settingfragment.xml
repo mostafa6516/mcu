@@ -11,12 +11,11 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_language"
         android:text="language"
         android:textColor="@color/purple_700"
         android:textSize="30sp"
@@ -27,12 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:checked="true"
         android:text="English"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:textStyle="bold"
-        android:checked="true"
-        />
+        android:textStyle="bold" />
 
     <Switch
         android:id="@+id/lan_ar"
@@ -49,11 +47,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_themes"
         android:text="Themes"
         android:textColor="@color/purple_700"
         android:textSize="30sp"
         android:textStyle="bold" />
-
 
 
     <Switch
@@ -61,12 +59,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:checked="true"
         android:text="Light"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:textStyle="bold"
-        android:checked="true"
-        />
+        android:textStyle="bold" />
 
     <Switch
         android:id="@+id/the_dark"
@@ -81,28 +78,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="20dp"
-        >
+        android:orientation="horizontal">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="notifications"
-        android:textColor="@color/purple_700"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_notif"
+            android:text="notifications"
+            android:textColor="@color/purple_700"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spi_notifications"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:layout_marginLeft="165dp"/>
+        <Spinner
+            android:id="@+id/spi_notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="165dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
 
     </LinearLayout>
 
@@ -111,6 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/ic_fingerprint"
         android:text="fingerprint lock"
         android:textColor="@color/purple_700"
         android:textSize="20sp"
@@ -127,6 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_adduser"
             android:text="Add User"
 
             app:backgroundTint="#000" />
@@ -136,6 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_about"
             android:text=" About Us"
             app:backgroundTint="#000" />
 
@@ -144,6 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_login_sign"
             android:text="Logout"
             app:backgroundTint="#000" />
     </LinearLayout>

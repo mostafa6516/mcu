@@ -38,16 +38,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-// time
+<!--  time-->
         <Spinner
             android:id="@+id/time"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            />
+            android:spinnerMode="dropdown" />
 
-//speed
+<!--//speed-->
         <Spinner
             android:id="@+id/speed"
             android:layout_width="fill_parent"
@@ -68,6 +67,7 @@
         android:shadowColor="#000"
         android:text="Save"
         android:textColor="@color/white"
+        android:drawableStart="@drawable/ic_done_dark"
         android:textStyle="bold" />
 
 
@@ -86,7 +86,8 @@
             android:id="@+id/total_cost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:editable="false" />
+            android:editable="false"
+            android:drawableStart="@drawable/ic_total_cost"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

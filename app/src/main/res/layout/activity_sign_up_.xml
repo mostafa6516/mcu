@@ -54,7 +54,6 @@
             android:orientation="vertical">
 
 
-
             <!--        e_mail-->
 
             <com.google.android.material.textfield.TextInputLayout
@@ -69,6 +68,7 @@
                     android:id="@+id/e_mail_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_email"
                     android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -89,6 +89,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_pas_light"
                     android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -108,11 +109,10 @@
                     android:id="@+id/confirm_password_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_pas_light"
                     android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-
 
 
             <!--        phone number-->
@@ -129,6 +129,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_phone_dark"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -148,6 +149,7 @@
                     android:id="@+id/id_manager_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart=""
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -167,18 +169,17 @@
                 android:layout_centerInParent="true">
 
 
-
                 <!--    sign up-->
                 <Button
                     android:id="@+id/sign_up_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#000"
                     android:layout_marginTop="20dp"
+                    android:background="#000"
+                    android:drawableStart="@drawable/ic_done_dark"
                     android:text="Sign Up"
                     android:textColor="#FFFFFFFF"
-                    app:backgroundTint="#000"/>
-
+                    app:backgroundTint="#000" />
 
 
                 <!--    Already have an account? login-->
@@ -189,6 +190,7 @@
                     android:layout_below="@+id/sign_up_btn"
                     android:layout_marginTop="20dp"
                     android:background="#00000000"
+                    android:drawableStart="@drawable/ic_login_sign"
                     android:text="@string/already_have_an_account_login"
                     android:textColor="@color/black" />
 
@@ -204,8 +206,6 @@
                 android:layout_centerVertical="true"
                 android:background="@drawable/progressbar_backgrund"
                 android:visibility="gone" />
-
-
 
 
         </RelativeLayout>

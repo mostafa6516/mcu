@@ -53,14 +53,15 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Total Hours"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:hint="Total Hours">
 
 
                     <EditText
                         android:id="@+id/total_hours"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/time_icon"
                         android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -79,6 +80,7 @@
                         android:id="@+id/price_per_hour"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_money"
                         android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -91,6 +93,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     android:background="#000"
+                    android:drawableStart="@drawable/ic_done_dark"
                     android:text="Cost"
                     android:textColor="#fff"
                     app:backgroundTint="#000" />
@@ -99,18 +102,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Total Cost"
-                    android:layout_marginTop="40dp">
+                    android:layout_marginTop="40dp"
+                    android:hint="Total Cost">
 
 
                     <EditText
                         android:id="@+id/total_cost"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_total_cost"
                         android:editable="false" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
 
 
             </LinearLayout>
