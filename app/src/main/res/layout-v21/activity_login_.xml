@@ -106,7 +106,6 @@
                     android:layout_gravity="left"
                     android:layout_margin="5dp"
                     android:background="#00000000"
-                    android:drawableStart=""
                     android:fontFamily="@font/antic"
                     android:text="Remember me "
                     android:textColor="#000000"

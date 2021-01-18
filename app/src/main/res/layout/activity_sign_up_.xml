@@ -149,7 +149,6 @@
                     android:id="@+id/id_manager_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableStart=""
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>

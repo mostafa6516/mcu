@@ -93,8 +93,12 @@ public class login_Activity extends AppCompatActivity {
 
 
         //onclick to login
-        findViewById ( R.id.login_btn ).setOnClickListener ( v ->
-               validationData ( ) );
+        findViewById ( R.id.login_btn ).setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick ( View v ) {
+                login_Activity.this.validationData ( );
+            }
+        } );
 
     }
 

@@ -3,6 +3,7 @@ package com.example.mcu.LocationOwner;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,9 @@ public class retailer_settingfragment extends Fragment {
     Activity referenceActivity;
     View parentHolder;
 
-    Button btn_about;
+    Button btn_about, out ;
+    private Session session;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,15 +75,31 @@ public class retailer_settingfragment extends Fragment {
         referenceActivity = getActivity ( );
         // Inflate the layout for this fragment
         View v = inflater.inflate ( R.layout.retailer_settingfragment, container, false );
+        //Hooks
         Button btn_about=(Button) v.findViewById (R.id.about_us  );
+        Button out=(Button) v.findViewById (R.id.log_out  );
+
+
 
         // link from setting to about us
-
         btn_about.setOnClickListener( new View.OnClickListener ( ) {
             @Override
             public void onClick ( View v ) {
                 Intent intent = new Intent (new Intent(getActivity(), aboutus.class));
                 startActivity ( intent );
+
+            }
+        } );
+
+
+        // link from setting to log out
+        out.setOnClickListener( new View.OnClickListener ( ) {
+            @Override
+            public void onClick ( View v ) {
+                Intent intent = new Intent (new Intent(getActivity(), login_Activity.class));
+                startActivity ( intent );
+
+
 
             }
         } );
