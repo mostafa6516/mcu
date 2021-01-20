@@ -45,7 +45,7 @@ public class retailer_dashboard_Activity extends AppCompatActivity {
                     case R.id.bottom_nav_ip_Setting:
                         fragment = new retailer_ip_settingfragment();
                         case R.id.bottom_nav_profile:
-                        fragment = new retailer_profile();
+                        fragment = new retailer_profilefragment ();
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
 

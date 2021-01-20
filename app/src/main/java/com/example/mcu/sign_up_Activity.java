@@ -93,6 +93,7 @@ public class sign_up_Activity extends AppCompatActivity {
         String idmanger = id.getText().toString().trim();
 
 
+
         //trust data
         // email
         if (email.isEmpty()) {
@@ -254,6 +255,7 @@ public class sign_up_Activity extends AppCompatActivity {
             user.put("confirm_password", confirm_password.getText().toString().trim());
             user.put("phone_number", phone_number.getText().toString().trim());
             user.put("ID", id.getText().toString().trim());
+            user.put ( "image","null" );
 
 
 

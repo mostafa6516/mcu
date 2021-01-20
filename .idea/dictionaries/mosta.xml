@@ -2,6 +2,7 @@
   <dictionary name="mosta">
     <words>
       <w>firestore</w>
+      <w>ipandordermodel</w>
     </words>
   </dictionary>
 </component>

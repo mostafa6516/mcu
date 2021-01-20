@@ -81,15 +81,8 @@ public class retailer_settingfragment extends Fragment {
 
 
 
-        // link from setting to about us
-        btn_about.setOnClickListener( new View.OnClickListener ( ) {
-            @Override
-            public void onClick ( View v ) {
-                Intent intent = new Intent (new Intent(getActivity(), aboutus.class));
-                startActivity ( intent );
 
-            }
-        } );
+
 
 
         // link from setting to log out
