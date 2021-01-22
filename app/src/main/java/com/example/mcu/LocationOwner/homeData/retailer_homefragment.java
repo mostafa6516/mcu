@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,80 +32,81 @@ public class retailer_homefragment extends Fragment {
 
 
     private homeAdepter adepter;
-    private List < ipandordermodel > list;
+    private List<ipandordermodel> list;
 
     private FirebaseFirestore firestore;
 
 
     @Override
-    public View onCreateView ( LayoutInflater inflater, ViewGroup container,
-                               Bundle savedInstanceState ) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate ( R.layout.retailer_homefragment, container, false );
+        return inflater.inflate(R.layout.retailer_homefragment, container, false);
     }
 
 
     @Override
-    public void onViewCreated ( @NonNull View view, @Nullable Bundle savedInstanceState ) {
-        super.onViewCreated ( view, savedInstanceState );
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         //hooks
-        recyclerView = view.findViewById ( R.id.recyclerview_home );
-        progressBar = view.findViewById ( R.id.progressbar_home );
-        firestore = FirebaseFirestore.getInstance ( );
+        recyclerView = view.findViewById(R.id.recyclerview_home);
+        progressBar = view.findViewById(R.id.progressbar_home);
+        firestore = FirebaseFirestore.getInstance();
 
 
         // to array data
-        recyclerView.setHasFixedSize ( true );
-        recyclerView.setLayoutManager ( new LinearLayoutManager ( getActivity ( ) ) );
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        list = new ArrayList <> ( );
-        adepter = new homeAdepter ( getActivity ( ), list );
-        recyclerView.setAdapter ( adepter );
-        getdata ();
+        list = new ArrayList<>();
+        adepter = new homeAdepter(getActivity(), list);
+        recyclerView.setAdapter(adepter);
+        getdata();
 
 
     }
 
 
-    private void getdata () {
+    private void getdata() {
 
-        progressBar.setVisibility ( View.VISIBLE );
+        progressBar.setVisibility(View.VISIBLE);
 
 
-        firestore.collection ( "IP and order number" )
-                .orderBy ( "time", Query.Direction.DESCENDING )
-                .addSnapshotListener ( ( value, error ) -> {
+        firestore.collection("IP and order number")
+                .orderBy("time", Query.Direction.DESCENDING)
+                .addSnapshotListener((value, error) -> {
 
                     if (error == null) {
 
 
                         if (value == null) {
-                            progressBar.setVisibility ( View.GONE );
-                            Toast.makeText ( getActivity ( ), "value is null !  ", Toast.LENGTH_SHORT ).show ( );
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(getActivity(), "value is null !  ", Toast.LENGTH_SHORT).show();
 
 
                         } else {
 
-                            for (DocumentChange documentChange : value.getDocumentChanges ( )) {
+                            for (DocumentChange documentChange : value.getDocumentChanges()) {
 
-                                ipandordermodel model = documentChange.getDocument ( ).toObject ( ipandordermodel.class );
+                                ipandordermodel model = documentChange.getDocument().toObject(ipandordermodel.class);
 
-                                list.add ( model );
+                                list.add(model);
 
 
-                                adepter.notifyDataSetChanged ( );
+                                adepter.notifyDataSetChanged();
                             }
-                            progressBar.setVisibility ( View.GONE );
+                            progressBar.setVisibility(View.GONE);
 
                         }
 
 
                     } else {
-                        progressBar.setVisibility ( View.GONE );
-                        Toast.makeText ( getActivity ( ), error.getMessage ( ), Toast.LENGTH_SHORT ).show ( );
+                        progressBar.setVisibility(View.GONE);
+                        Log.e("error", error.toString());
+                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                } );
+                });
 
     }
 }

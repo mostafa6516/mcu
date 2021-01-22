@@ -7,11 +7,11 @@ import java.util.List;
 public class ipandordermodel {
 
 
-    private double ip;
+    private String ip;
     private int order;
 
 
-    public ipandordermodel ( double ip, int order ) {
+    public ipandordermodel ( String ip, int order ) {
         this.ip = ip;
         this.order = order;
     }
@@ -21,11 +21,11 @@ public class ipandordermodel {
 
     }
 
-    public double getIp () {
+    public String getIp () {
         return ip;
     }
 
-    public void setIp ( double ip ) {
+    public void setIp ( String ip ) {
         this.ip = ip;
     }
 
