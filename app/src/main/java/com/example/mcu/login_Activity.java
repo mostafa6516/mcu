@@ -198,9 +198,6 @@ public class login_Activity extends AppCompatActivity {
         boolean isLogin = getSharedPreferences ( "Login", MODE_PRIVATE ).getBoolean ( "isLogin", false );
         if (isLogin) {
             goToMain();
-
-
-
         }
 
 
@@ -209,7 +206,7 @@ public class login_Activity extends AppCompatActivity {
 
     void goToMain(){
         startActivity ( new Intent ( login_Activity.this, retailer_dashboard_Activity.class ) );
-        finish ( );
+        finish ();
 
     }
 }

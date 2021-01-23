@@ -56,7 +56,6 @@ public class splash_Activity extends AppCompatActivity {
     private void run() {
         Intent intent = new Intent(splash_Activity.this, login_Activity.class);
 
-
         //animation for login screen
 
 
@@ -75,6 +74,7 @@ public class splash_Activity extends AppCompatActivity {
 
         }
 
+        finish();
     }
 
 }

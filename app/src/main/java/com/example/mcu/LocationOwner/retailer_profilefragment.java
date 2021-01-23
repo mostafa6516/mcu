@@ -159,8 +159,7 @@ public class retailer_profilefragment extends Fragment {
 
                     firebaseAuth.signOut ();
                     startActivity ( new Intent ( getActivity (), splash_Activity.class ) );
-
-
+                    getActivity().finish();
                 } )
 
                 .setNegativeButton("No", ( dialog, which ) -> {
