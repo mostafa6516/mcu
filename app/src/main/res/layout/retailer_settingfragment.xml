@@ -21,11 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:drawableStart="@drawable/ic_language"
-        android:text="language"
+        android:text="@string/language"
         android:textColor="@color/purple_700"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_language" />
 
 
     <Switch
@@ -43,11 +43,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:drawableStart="@drawable/ic_themes"
         android:text="Themes"
         android:textColor="@color/purple_700"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_themes" />
 
 
     <Switch
@@ -71,18 +71,18 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:drawableStart="@drawable/ic_notif"
-            android:text="notifications"
+            android:text="@string/notifications"
             android:textColor="@color/purple_700"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_notif" />
 
         <Spinner
             android:id="@+id/spi_notifications"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="130dp"
-            android:layout_marginRight="-50dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="-50dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown" />
 
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:drawableStart="@drawable/ic_fingerprint"
-        android:text="fingerprint lock"
+        android:text="@string/fingerprint_lock"
         android:textColor="@color/purple_700"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -112,26 +112,11 @@
             android:layout_margin="10dp"
             android:drawableStart="@drawable/ic_adduser"
             android:text="Add User"
-
             app:backgroundTint="#000" />
 
-        <Button
-            android:id="@+id/about_us"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:drawableStart="@drawable/ic_about"
-            android:text=" About Us"
-            app:backgroundTint="#000" />
 
-        <Button
-            android:id="@+id/log_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:drawableStart="@drawable/ic_login_sign"
-            android:text="Logout"
-            app:backgroundTint="#000" />
+
+
     </LinearLayout>
 
 
