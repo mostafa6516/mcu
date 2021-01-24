@@ -10,12 +10,7 @@
     tools:context=".LocationOwner.retailer_dashboard_Activity">
     <!-- TODO: Update blank fragment layout -->
 
-    <ImageView
-        android:id="@+id/forget_password_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/ic_back" />
+
 
     <TextView
         android:layout_width="match_parent"
