@@ -22,11 +22,8 @@ import com.example.mcu.sign_up_Activity;
  * create an instance of this fragment.
  */
 public class retailer_settingfragment extends Fragment {
-    Activity referenceActivity;
-    View parentHolder;
 
-    Button btn_about, out ;
-    private Session session;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -72,12 +69,9 @@ public class retailer_settingfragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        referenceActivity = getActivity ( );
         // Inflate the layout for this fragment
         View v = inflater.inflate ( R.layout.retailer_settingfragment, container, false );
         //Hooks
-        Button btn_about=(Button) v.findViewById (R.id.about_us  );
-        Button out=(Button) v.findViewById (R.id.log_out  );
 
 
 
@@ -85,17 +79,7 @@ public class retailer_settingfragment extends Fragment {
 
 
 
-        // link from setting to log out
-        out.setOnClickListener( new View.OnClickListener ( ) {
-            @Override
-            public void onClick ( View v ) {
-                Intent intent = new Intent (new Intent(getActivity(), login_Activity.class));
-                startActivity ( intent );
 
-
-
-            }
-        } );
 
 
         return v;
