@@ -63,22 +63,25 @@ public class login_Activity extends AppCompatActivity {
 
 
         // link from login to sign up
-        callsignup.setOnClickListener ( v -> {
-            Intent intent = new Intent ( login_Activity.this, sign_up_Activity.class );
+        callsignup.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick ( View v ) {
+                Intent intent = new Intent ( login_Activity.this, sign_up_Activity.class );
 
-            Pair[] pairs = new Pair[7];
+                Pair[] pairs = new Pair[7];
 
-            pairs[0] = new Pair < View, String > ( loginlogo, "logo_image" );
-            pairs[1] = new Pair < View, String > ( welcomeback, "logo_text" );
-            pairs[2] = new Pair < View, String > ( sign_in_to_continue, "logo_desc" );
-            pairs[3] = new Pair < View, String > ( email_login, "username_tran" );
-            pairs[4] = new Pair < View, String > ( passwordlogin, "password_tran" );
-            pairs[5] = new Pair < View, String > ( forgetpasswod, "forget_tran" );
-            pairs[6] = new Pair < View, String > ( login_btn, "button_tran" );
+                pairs[0] = new Pair < View, String > ( loginlogo, "logo_image" );
+                pairs[1] = new Pair < View, String > ( welcomeback, "logo_text" );
+                pairs[2] = new Pair < View, String > ( sign_in_to_continue, "logo_desc" );
+                pairs[3] = new Pair < View, String > ( email_login, "username_tran" );
+                pairs[4] = new Pair < View, String > ( passwordlogin, "password_tran" );
+                pairs[5] = new Pair < View, String > ( forgetpasswod, "forget_tran" );
+                pairs[6] = new Pair < View, String > ( login_btn, "button_tran" );
 
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation ( login_Activity.this, pairs );
-            startActivity ( intent, options.toBundle ( ) );
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation ( login_Activity.this, pairs );
+                login_Activity.this.startActivity ( intent, options.toBundle ( ) );
 
+            }
         } );
         {
 

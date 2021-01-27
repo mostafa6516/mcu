@@ -123,13 +123,15 @@ public class retailer_profilefragment extends Fragment {
 
 
           // link from profile to about us
-        view.findViewById ( R.id.btn_about_us ).setOnClickListener ( v -> {
-          
-                Intent intent = new Intent (new Intent(getActivity(), aboutus.class));
-                startActivity ( intent );
+        view.findViewById ( R.id.btn_about_us ).setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick ( View v ) {
 
-            
+                Intent intent = new Intent ( new Intent ( retailer_profilefragment.this.getActivity ( ), aboutus.class ) );
+                retailer_profilefragment.this.startActivity ( intent );
 
+
+            }
         } );
 
 
