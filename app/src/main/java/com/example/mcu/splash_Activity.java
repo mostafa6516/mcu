@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class splash_Activity extends AppCompatActivity {
 
@@ -51,6 +52,17 @@ public class splash_Activity extends AppCompatActivity {
 
 
         new Handler().postDelayed(this::run, SPLASH_SCREEN);
+
+
+       boolean isdark  = getSharedPreferences ( "theme", MODE_PRIVATE )
+               .getBoolean ( "themeSelected", false );
+
+        if(isdark) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+
     }
 
     private void run() {

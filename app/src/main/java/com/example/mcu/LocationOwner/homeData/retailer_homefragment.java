@@ -60,7 +60,7 @@ public class retailer_homefragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         list = new ArrayList<>();
-        adepter = new homeAdepter(getActivity(), list);
+        adepter = new homeAdepter(list,getActivity());
         recyclerView.setAdapter(adepter);
         getdata();
 

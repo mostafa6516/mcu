@@ -1,10 +1,14 @@
 package com.example.mcu.LocationOwner.homeData;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -18,11 +22,13 @@ import java.util.List;
 public class homeAdepter extends RecyclerView.Adapter<homeAdepter.ViewHolder> {
 
     private List<ipandordermodel> list;
+    private Context context;
 
-
-    public homeAdepter(FragmentActivity activity, List<ipandordermodel> list) {
+    public homeAdepter(List<ipandordermodel> list, Context context) {
         this.list = list;
+        this.context = context;
     }
+
 
     @NonNull
     @Override
@@ -35,6 +41,12 @@ public class homeAdepter extends RecyclerView.Adapter<homeAdepter.ViewHolder> {
 
         holder.set_ips(list.get(position).getIp());
         holder.set_order_number(list.get(position).getOrder());
+        holder.ic_setting.setOnClickListener(v -> {
+
+            Intent intent =new Intent(context,retailer_ip_settingActivity.class);
+            intent.putExtra("ip",list.get(position).getIp());
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -45,12 +57,12 @@ public class homeAdepter extends RecyclerView.Adapter<homeAdepter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView ipnum;
         TextView ord_num;
-
+       ImageView ic_setting;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
+            ic_setting = itemView.findViewById(R.id.icon_ip_setting);
             ipnum = itemView.findViewById(R.id.user_ip_home);
             ord_num = itemView.findViewById(R.id.order_num_home);
 

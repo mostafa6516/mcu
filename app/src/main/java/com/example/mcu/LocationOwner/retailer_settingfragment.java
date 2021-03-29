@@ -1,20 +1,26 @@
 package com.example.mcu.LocationOwner;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.se.omapi.Session;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.example.mcu.R;
-import com.example.mcu.aboutus;
 import com.example.mcu.login_Activity;
-import com.example.mcu.sign_up_Activity;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +30,7 @@ import com.example.mcu.sign_up_Activity;
 public class retailer_settingfragment extends Fragment {
     Activity referenceActivity;
     View parentHolder;
+    SwitchMaterial the_dark ;
 
     Button btn_about, out ;
     private Session session;
@@ -72,32 +79,83 @@ public class retailer_settingfragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        referenceActivity = getActivity ( );
+        referenceActivity = getActivity();
         // Inflate the layout for this fragment
-        View v = inflater.inflate ( R.layout.retailer_settingfragment, container, false );
-        //Hooks
-        Button btn_about=(Button) v.findViewById (R.id.about_us  );
-        Button out=(Button) v.findViewById (R.id.log_out  );
+        View v = inflater.inflate(R.layout.retailer_settingfragment, container, false);
 
 
 
 
-
-
-
-        // link from setting to log out
-        out.setOnClickListener( new View.OnClickListener ( ) {
-            @Override
-            public void onClick ( View v ) {
-                Intent intent = new Intent (new Intent(getActivity(), login_Activity.class));
-                startActivity ( intent );
-
-
-
-            }
-        } );
+           
 
 
         return v;
     }
+    @Override
+    public void onViewCreated ( @NonNull View view, @Nullable Bundle savedInstanceState ) {
+        super.onViewCreated(view, savedInstanceState);
+
+        the_dark =view.findViewById(R.id.the_dark);
+
+
+
+        // the switch theme
+        the_dark.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked)
+                savetheme(true);
+            else
+                savetheme(false);
+
+        });
+
+        view.findViewById(R.id.language).setOnClickListener ( v -> {
+            showAlertLanguage();
+
+        } );
+
+
+    }
+
+    private void showAlertLanguage() {
+
+        AlertDialog alert = new AlertDialog.Builder(getActivity()).create();
+        alert.setCancelable(false);
+        View view=LayoutInflater.from(getActivity()).inflate(R.layout.layout_language,null);
+        alert.setView(view);
+        ImageView cancel_lang =view.findViewById(R.id.cancel_lang);
+        cancel_lang.setOnClickListener(v -> {
+            alert.dismiss();
+        });
+        RadioButton lang_en = view.findViewById(R.id.lang_en);
+        RadioButton lang_ar = view.findViewById(R.id.lang_ar);
+        view.findViewById(R.id.save_language).setOnClickListener(v -> {
+
+
+        });
+
+        alert.show();
+    }
+    void  saveLanguage() {
+
+    }
+
+
+    void savetheme(boolean b) {
+        getSharedPreferences ( "theme")
+                .edit ( )
+                .putBoolean ( "themeSelected", b )
+                .apply ( );
+
+        if(b) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+    }
+
+    private SharedPreferences getSharedPreferences(String theme) {
+        return null;
+    }
+
+
 }

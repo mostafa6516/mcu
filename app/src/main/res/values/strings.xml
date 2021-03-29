@@ -37,6 +37,9 @@
     <string name="fingerprint_lock">fingerprint lock</string>
     <string name="notifications">notifications</string>
     <string name="language">language</string>
+    <string name="choose_language">Choose language</string>
+    <string name="english">English</string>
+    <string name="arabic">عربي</string>
 
 
 </resources>

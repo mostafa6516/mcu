@@ -13,6 +13,7 @@
 
 
     <TextView
+        android:id="@+id/language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -23,7 +24,7 @@
         app:drawableStartCompat="@drawable/ic_language" />
 
 
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/lan_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +32,8 @@
         android:text="عربي"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:ignore="MissingClass,UseSwitchCompatOrMaterialXml" />
 
 
     <TextView
@@ -43,9 +45,9 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:drawableStartCompat="@drawable/ic_themes" />
+    
 
-
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/the_dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +55,8 @@
         android:text="@string/dark"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:ignore="MissingClass" />
 
     <LinearLayout
         android:layout_width="match_parent"

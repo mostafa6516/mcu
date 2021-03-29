@@ -8,7 +8,8 @@
         android:roundIcon="@drawable/slash_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mcu">
-        <activity android:name=".aboutus"></activity>
+        <activity android:name=".LocationOwner.homeData.retailer_ip_settingActivity"></activity>
+        <activity android:name=".aboutus" />
         <activity android:name=".LocationOwner.retailer_dashboard_Activity" />
         <activity android:name=".password_success_Activity" />
         <activity android:name=".new_password_Activity" />
