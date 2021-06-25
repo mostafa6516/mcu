@@ -50,6 +50,9 @@ public class FingerprintActivity extends AppCompatActivity {
         FingerprintManager fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
 
 
+
+
+
         textView = (TextView) findViewById(R.id.errorText);
 
 
