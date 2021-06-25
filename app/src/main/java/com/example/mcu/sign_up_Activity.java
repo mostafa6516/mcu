@@ -68,7 +68,7 @@ public class sign_up_Activity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
 
 
-        findViewById(R.id.sign_up_btn).setOnClickListener(v ->
+        sign_up_btn.setOnClickListener(v ->
                 validationData());
         // link from sign_up_Activity to login_Activity
 
@@ -211,9 +211,7 @@ public class sign_up_Activity extends AppCompatActivity {
         // Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
         // to sign up from fire base
         signupwithfirebase(email, pass);
-        {
 
-        }
     }
 
     private void signupwithfirebase(String email, String pass) {
@@ -276,7 +274,6 @@ public class sign_up_Activity extends AppCompatActivity {
                                 .setPositiveButton( "Okay!",
                                         (dialog, which) -> {
 
-
                                     startActivity( new Intent( sign_up_Activity.this, login_Activity.class ) );
 
                                 })
@@ -295,8 +292,6 @@ public class sign_up_Activity extends AppCompatActivity {
                             return this;
                         }
                     });
-
-
 
                     }
         }

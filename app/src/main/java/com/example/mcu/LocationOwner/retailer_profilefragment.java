@@ -222,7 +222,7 @@ public class retailer_profilefragment extends Fragment {
 
 
 
-                        username.setText ( "Hi, "+ mailDB );
+                        username.setText ( mailDB );
 
 
 

@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500"
-    tools:context=".LocationOwner.retailer_costfragment">
+    android:background="@color/background"
+    tools:context=".LocationOwner.homeData.retailer_ip_settingActivity">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,7 +12,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fff"
+        android:background="@color/background"
         android:orientation="vertical"
         android:padding="10dp"
         tools:context=".login_Activity">
@@ -37,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="17dp"
                 android:fontFamily="@font/carter_one"
-                android:text="control "
+                android:text="@string/control"
+                android:textColor="@color/textColor"
                 android:textSize="40sp" />
 
 
@@ -48,73 +49,94 @@
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
-                <!--          username-->
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:hint=" speed ">
+                    android:hint="@string/speed"
+                    android:textColorHint="@color/secondary"
+                    app:boxBackgroundColor="@color/light"
+                    app:boxStrokeColor="@color/secondary"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/secondary"
+                    app:startIconDrawable="@drawable/time_icon"
+                    app:startIconTint="@color/secondary">
 
 
-                    <EditText
-                        android:id="@+id/total_hours"
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/time_icon"
+                        android:textColor="@color/black"
+                        android:id="@+id/speed"
                         android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <!--        password-->
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:hint=" time">
+                    android:hint="@string/time"
+                    android:textColorHint="@color/secondary"
+                    app:boxBackgroundColor="@color/light"
+                    app:boxStrokeColor="@color/secondary"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/secondary"
+                    app:startIconDrawable="@drawable/ic_money"
+                    app:startIconTint="@color/secondary">
 
 
-                    <EditText
-                        android:id="@+id/price_per_hour"
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_money"
+                        android:textColor="@color/black"
+                        android:id="@+id/time"
                         android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <Button
-                    android:id="@+id/btn_cost"
+                    android:id="@+id/btn_start"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#000"
-                    android:drawableStart="@drawable/ic_done_dark"
-                    android:text="start"
-                    android:textColor="#fff"
-                    app:backgroundTint="#000" />
+                    android:onClick="startTimeCountDown"
+                    android:background="@color/secondary"
+                    android:text="@string/start"
+                    android:textColor="@color/white" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:hint="  time left">
+                    android:hint="@string/time_left"
+                    android:textColorHint="@color/secondary"
+                    app:boxBackgroundColor="@color/light"
+                    app:boxStrokeColor="@color/secondary"
+                    app:boxStrokeWidthFocused="2dp"
+
+                    app:endIconTint="@color/secondary"
+                    app:startIconDrawable="@drawable/ic_total_cost"
+                    app:startIconTint="@color/secondary">
 
 
-                    <EditText
-                        android:id="@+id/total_cost"
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_total_cost"
-                        android:editable="false" />
+                        android:textColor="@color/black"
+                        android:id="@+id/timeleft"
+                        android:inputType="number"
+                        android:enabled="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
-
 
             </LinearLayout>
         </LinearLayout>

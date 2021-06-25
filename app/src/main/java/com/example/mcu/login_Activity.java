@@ -42,7 +42,7 @@ public class login_Activity extends AppCompatActivity {
 
         // for full screen
         getWindow ( ).setFlags ( WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN );
-        setContentView ( R.layout.activity_login_ );
+        setContentView ( R.layout.activity_login );
 
 
         //HOOKS
@@ -110,32 +110,21 @@ public class login_Activity extends AppCompatActivity {
         String passlogin = passwordlogin.getText ( ).toString ( ).trim ( );
 
         //trust data
-        // user name
+        // email name
         if (emaillogin.isEmpty ( )) {
             email_login.requestFocus ( );
-            // first option
-            // Toast.makeText(this, "User name is required", Toast.LENGTH_SHORT).show();
-
-
-            // change to Alert
-            showAlert ( "User name is required" );
+            showAlert ( "Email is required" );
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(emaillogin).matches()) {
             email_login.requestFocus();
-
-            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
+            showAlert ( "Invalid email address" );
             return;
         }
         // password
         if (passlogin.isEmpty ( )) {
             passwordlogin.requestFocus ( );
-            // first option
-            //Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show();
-
-
-            // change to Alert
             showAlert ( "Password is required" );
             return;
 
@@ -143,14 +132,8 @@ public class login_Activity extends AppCompatActivity {
 
         if (passlogin.length ( ) < 8) {
             passwordlogin.requestFocus ( );
-            //Toast.makeText(this, "Password must be 8 digits", Toast.LENGTH_SHORT).show();
-
-
-            // change to Alert
             showAlert ( "Password must be 8 digits" );
             return;
-
-
         }
 
 
@@ -197,16 +180,22 @@ public class login_Activity extends AppCompatActivity {
 
     protected void onStart () {
         super.onStart ( );
-
         boolean isLogin = getSharedPreferences ( "Login", MODE_PRIVATE ).getBoolean ( "isLogin", false );
         if (isLogin) {
-            goToMain();
+            boolean isFingerprintAllowed = getSharedPreferences("Fingerprint", MODE_PRIVATE)
+                    .getBoolean("FingerprintAllowed", false);
+            if (isFingerprintAllowed)
+                gotoFingerprintAuth();
+            else
+                goToMain();
+
         }
-
-
     }
 
-
+void gotoFingerprintAuth(){
+    startActivity ( new Intent ( login_Activity.this, FingerprintActivity.class ) );
+    finish ();
+    }
     void goToMain(){
         startActivity ( new Intent ( login_Activity.this, retailer_dashboard_Activity.class ) );
         finish ();

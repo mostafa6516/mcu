@@ -1,6 +1,7 @@
 package com.example.mcu.LocationOwner.homeData;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,10 +44,7 @@ public class homeAdepter extends RecyclerView.Adapter<homeAdepter.ViewHolder> {
         holder.set_ips(list.get(position).getIp());
         holder.set_order_number(list.get(position).getOrder());
         holder.ic_setting.setOnClickListener(v -> {
-
-            Intent intent =new Intent(context,retailer_ip_settingActivity.class);
-            intent.putExtra("ip",list.get(position).getIp());
-            context.startActivity(intent);
+            showAlert(list.get(position).getIp());
         });
     }
 
@@ -78,10 +77,23 @@ public class homeAdepter extends RecyclerView.Adapter<homeAdepter.ViewHolder> {
 
 
         void set_order_number(int order) {
-
             ord_num.setText(String.valueOf(order));
-
-
         }
+    }
+    void showAlert(String ip) {
+        new AlertDialog.Builder(this.context)
+                .setTitle(ip)
+                .setMessage("Are you sure you want to control this IP?")
+                .setIcon(R.drawable.ic_attention)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent =new Intent(context,retailer_ip_settingActivity.class);
+                        intent.putExtra("ip", ip);
+                        context.startActivity(intent);
+                    }
+                })
+                .setNegativeButton("No", null)
+                .create().show();
     }
 }

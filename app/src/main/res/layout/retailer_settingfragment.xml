@@ -3,12 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="15dp"
+    android:layout_height="match_parent"
+    android:background="@color/background"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".LocationOwner.retailer_dashboard_Activity">
+    tools:context=".LocationOwner.retailer_settingfragment">
     <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/login_logo"
+        android:transitionName="logo_image" />
+
+
+    <TextView
+        android:id="@+id/costting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="-20dp"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/setting"
+        android:textColor="@color/textColor"
+        android:textSize="40sp" />
 
 
 
@@ -16,21 +35,21 @@
         android:id="@+id/language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:text="@string/language"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/textColor"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:drawableStartCompat="@drawable/ic_language" />
+        app:drawableStartCompat="@drawable/ic_language"
+        />
 
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/lan_ar"
+        android:id="@+id/lang_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="عربي"
-        android:textColor="@color/black"
+        android:text="@string/arabic"
+        android:textColor="@color/textColor"
         android:textSize="15sp"
         android:textStyle="bold"
         tools:ignore="MissingClass,UseSwitchCompatOrMaterialXml" />
@@ -40,82 +59,65 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Themes"
-        android:textColor="@color/purple_700"
+        android:text="@string/themes"
+        android:textColor="@color/textColor"
         android:textSize="30sp"
         android:textStyle="bold"
         app:drawableStartCompat="@drawable/ic_themes" />
     
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/the_dark"
+        android:id="@+id/theme_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dark_mode"
+        android:textColor="@color/textColor"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="MissingClass, UseSwitchCompatOrMaterialXml" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/dark"
-        android:textColor="@color/black"
+        android:text="@string/security"
+        android:textColor="@color/textColor"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_lock" />
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/finger_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fingerprint_lock"
+        android:textColor="@color/textColor"
         android:textSize="15sp"
         android:textStyle="bold"
-        tools:ignore="MissingClass" />
+        tools:ignore="MissingClass, UseSwitchCompatOrMaterialXml" />
 
-    <LinearLayout
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="10dp"
+        android:text="@string/notifications"
+        android:textColor="@color/textColor"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_notif" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:text="@string/notifications"
-            android:textColor="@color/purple_700"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:drawableStartCompat="@drawable/ic_notif" />
-
-        <Spinner
-            android:id="@+id/spi_notifications"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="130dp"
-            android:layout_marginEnd="-50dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown" />
-
-    </LinearLayout>
-
-
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/notifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:drawableStart="@drawable/ic_fingerprint"
-        android:text="@string/fingerprint_lock"
-        android:textColor="@color/purple_700"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/add_user"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:drawableStart="@drawable/ic_adduser"
-            android:text="Add User"
-            app:backgroundTint="#000" />
-
-
-
-
-    </LinearLayout>
+        android:text="@string/allow_notifications"
+        android:textColor="@color/textColor"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="MissingClass, UseSwitchCompatOrMaterialXml" />
 
 
 </LinearLayout>
